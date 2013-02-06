@@ -3,6 +3,6 @@ class Product < ActiveRecord::Base
   mount_uploader :image, ProductImageUploader
 
   validates_presence_of :name, :description
-  validates_numericality_of :price, :greater_than => 1, :only_integer => true
+  validates_numericality_of :price, :greater_than => 0, :only_integer => true
   validates_uniqueness_of :name
 end
